@@ -28,7 +28,7 @@ class TestCase(object):
 
     def checkBcReady(self):
         """Test if bc is found on the system"""
-        if os.system('which -s bc'):
+        if os.system('which bc'):
             return False
         else:
             return True
