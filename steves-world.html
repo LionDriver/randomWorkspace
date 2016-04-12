@@ -1,89 +1,89 @@
 
 <!DOCTYPE html>
 <html lang=en>
-	<head>
-		<meta charset=utf-8>
-		<title>A test space for steve to play with the SDK</title>
-		<script src="http://sdk.altvr.com/libs/three.js/r73/build/three.js"></script>
-		<script src="http://sdk.altvr.com/libs/altspace.js/0.6.2/altspace.min.js"></script>
-		<script src="http://sdk.altvr.com/libs/three.js/r73/examples/js/geometries/TextGeometry.js"></script>
-		<script src="http://sdk.altvr.com/libs/three.js/r73/examples/js/utils/FontUtils.js"></script>
-		<script src="http://sdk.altvr.com/libs/three.js/r73/examples/fonts/helvetiker_regular.typeface.js"></script>
+    <head>
+        <meta charset=utf-8>
+        <title>A test space for steve to play with the SDK</title>
+        <script src="http://sdk.altvr.com/libs/three.js/r73/build/three.js"></script>
+        <script src="http://sdk.altvr.com/libs/altspace.js/0.6.2/altspace.min.js"></script>
+        <script src="http://sdk.altvr.com/libs/three.js/r73/examples/js/geometries/TextGeometry.js"></script>
+        <script src="http://sdk.altvr.com/libs/three.js/r73/examples/js/utils/FontUtils.js"></script>
+        <script src="http://sdk.altvr.com/libs/three.js/r73/examples/fonts/helvetiker_regular.typeface.js"></script>
 
-	</head>
-	<body>
+    </head>
+    <body>
 
-		<script>
-		/*
-		"steves-world"
-		Author: Steve Osteen
-		Date: April 2016
-		*/
+        <script>
+        /*
+        "steves-world"
+        Author: Steve Osteen
+        Date: April 2016
+        */
 
-		if (!window.altspace) document.write('<h3>To view this example, please open this page in <a href="http://altvr.com"> AltspaceVR </a></h3>');
-		var text = "Steve Is Cool";
-		//Setup
-		var scene = new THREE.Scene();
-	    var renderer = altspace.getThreeJSRenderer({version:'0.2.0'});
+        if (!window.altspace) document.write('<h3>To view this example, please open this page in <a href="http://altvr.com"> AltspaceVR </a></h3>');
+        var text = "Steve Is Cool";
+        //Setup
+        var scene = new THREE.Scene();
+        var renderer = altspace.getThreeJSRenderer({version:'0.2.0'});
         var utilities = altspace.utilities;
         var behaviors = altspace.utilities.behaviors;
-	    var sim = utilities.Simulation();
+        var sim = utilities.Simulation();
 
-		createSphere();
-		//createText(text);
-		//createCube();
-		//createTriangle();
+        createSphere();
+        //createText(text);
+        //createCube();
+        //createTriangle();
 
 
-		function createTriangle(){
-			var material = new THREE.MeshBasicMaterial( { color: 0xff0000, side: THREE.DoubleSide } );
-			var geometry = new THREE.Geometry();
-			geometry.vertices.push( new THREE.Vector3( 25, 10, 0 ) );  // vertex 0
-			geometry.vertices.push( new THREE.Vector3( 25, 10, 0 ) );   // vertex 1
-			geometry.vertices.push( new THREE.Vector3( 50, 10, 0 ) );  // vertex 2
-			geometry.faces.push( new THREE.Face3( 10, 1, 2 ) );
-			var mesh = new THREE.Mesh( geometry, material ); 
-			sim.scene.add(mesh);
-		}
+        function createTriangle(){
+            var material = new THREE.MeshBasicMaterial( { color: 0xff0000, side: THREE.DoubleSide } );
+            var geometry = new THREE.Geometry();
+            geometry.vertices.push( new THREE.Vector3( 25, 10, 0 ) );  // vertex 0
+            geometry.vertices.push( new THREE.Vector3( 25, 10, 0 ) );   // vertex 1
+            geometry.vertices.push( new THREE.Vector3( 50, 10, 0 ) );  // vertex 2
+            geometry.faces.push( new THREE.Face3( 10, 1, 2 ) );
+            var mesh = new THREE.Mesh( geometry, material ); 
+            sim.scene.add(mesh);
+        }
 
-		function createText(label) {
-			console.log('adding Text: ' + label);
-			var geometry = new THREE.TextGeometry(label);
-			var material = new THREE.MeshBasicMaterial({color:'green'});
-			var mesh = new THREE.Mesh(geometry, material);
-			mesh.position.x = -400;
-			mesh.position.y = -500;
-			mesh.scale.z = 0.2;
-			mesh.scale.multiplyScalar(1);
-			sim.scene.add(mesh);
-		}
+        function createText(label) {
+            console.log('adding Text: ' + label);
+            var geometry = new THREE.TextGeometry(label);
+            var material = new THREE.MeshBasicMaterial({color:'green'});
+            var mesh = new THREE.Mesh(geometry, material);
+            mesh.position.x = -400;
+            mesh.position.y = -500;
+            mesh.scale.z = 0.2;
+            mesh.scale.multiplyScalar(1);
+            sim.scene.add(mesh);
+        }
 
-		function createCube() {
-			var geoBlock = new THREE.CubeGeometry( 200, 200, 200 );
-			var material = new THREE.MeshBasicMaterial({ color: 0x00FF00 });
-			var blockMesh = new THREE.Mesh( geoBlock, material );
-			blockMesh.position.x = -300;
-			blockMesh.position.y = -300;
-			sim.scene.add(blockMesh);
-		}
+        function createCube() {
+            var geoBlock = new THREE.CubeGeometry( 200, 200, 200 );
+            var material = new THREE.MeshBasicMaterial({ color: 0x00FF00 });
+            var blockMesh = new THREE.Mesh( geoBlock, material );
+            blockMesh.position.x = -300;
+            blockMesh.position.y = -300;
+            sim.scene.add(blockMesh);
+        }
 
-		function createSphere() {
-			console.log('adding sphere');
+        function createSphere() {
+            console.log('adding sphere');
 
-			var sphereGeom =  new THREE.SphereGeometry( 400, 64, 32 );
-			var sphereTexture =  new THREE.ImageUtils.loadTexture( "./images/StarTetrahedronSml.png" );
-			var sphereMaterial = new THREE.MeshLambertMaterial( { map: sphereTexture, color: 0xE53319 } );
+            var sphereGeom =  new THREE.SphereGeometry( 400, 64, 32 );
+            var sphereTexture =  new THREE.ImageUtils.loadTexture( "./images/StarTetrahedronSml.png" );
+            var sphereMaterial = new THREE.MeshLambertMaterial( { map: sphereTexture, color: 0xE53319 } );
             var sphere = new THREE.Mesh( sphereGeom.clone(), sphereMaterial );
             sphere.position.set( 0, 0, 0);
 
-	    	sphere.addBehaviors(
-          		behaviors.Spin({ speed: 0.001 })
-        	);
+            sphere.addBehaviors(
+                behaviors.Spin({ speed: 0.001 })
+            );
 
-	    	sim.scene.add(sphere);
-	    }
+            sim.scene.add(sphere);
+        }
 
-		</script>
-		<img id="tetra" src="./images/StarTetrahedronSml.png">
-	</body>
+        </script>
+        <img id="tetra" src="./images/StarTetrahedronSml.png">
+    </body>
 </html>
