@@ -24,10 +24,10 @@
 		var text = "Steve Is Cool";
 		//Setup
 		var scene = new THREE.Scene();
-		var renderer = altspace.getThreeJSRenderer({version:'0.2.0'});
+	    var renderer = altspace.getThreeJSRenderer({version:'0.2.0'});
         var utilities = altspace.utilities;
         var behaviors = altspace.utilities.behaviors;
-		var sim = utilities.Simulation();
+	    var sim = utilities.Simulation();
 
 		createSphere();
 		//createText(text);
@@ -73,8 +73,8 @@
 			var sphereGeom =  new THREE.SphereGeometry( 400, 64, 32 );
 			var sphereTexture =  new THREE.ImageUtils.loadTexture( "./images/StarTetrahedronSml.png" );
 			var sphereMaterial = new THREE.MeshLambertMaterial( { map: sphereTexture, color: 0xE53319 } );
-	    	var sphere = new THREE.Mesh( sphereGeom.clone(), sphereMaterial );
-	    	sphere.position.set( 0, 0, 0);
+            var sphere = new THREE.Mesh( sphereGeom.clone(), sphereMaterial );
+            sphere.position.set( 0, 0, 0);
 
 	    	sphere.addBehaviors(
           		behaviors.Spin({ speed: 0.001 })
