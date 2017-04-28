@@ -1,4 +1,4 @@
-# altVR
+Random Workspace - Just random stuff I've worked on in the last few years, holds some old interview projects and halfed baked scripts for reference.
 
 steve-world.html - Sample of some stuff I figured out how to do in the altspaceVR SDK.
 
