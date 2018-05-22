@@ -1,11 +1,11 @@
 
 #!/usr/bin/python
 #####################################################################
-## Test Case ID     : AutomateSoundCloud.py
-## Module           : N/A
+## Test Case ID     : Selenium-webdriver-example.py
 ## Description      : A sample webdriver script showing how to automate a website (soundcloud example here).
-## Pre-requisites   : Python, selenium webdriver, firefox
+## Pre-requisites   : Python, selenium webdriver, firefox + plugin.
 ## Author           : Steve Osteen sosteen@gmail.com
+## Date             : March 2016
 ######################################################################
 
 import time

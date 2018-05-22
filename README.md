@@ -6,5 +6,5 @@ Just random stuff I've worked on that isn't owned by any corporation, holds some
 <li>multi-flashall.sh - Example of flashing multiple android based devices with a build.</li>
 <li>steve-world.html - Sample of some stuff I figured out how to do in the altspaceVR SDK.</li>
 <li>TestEngineerAssignment.py - A previous interview assigment showing a quick and dirty automation framework testing a command line tool.</li>
-<li>webdriverTest.html - Sample of work attempting to get webdriver to run inside altspaceVR.</li>
+<li>Selenium-webdriver-example.py - Example of automation of a webpage using selenium.</li>
 </ul>
